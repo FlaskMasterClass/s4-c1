@@ -15,7 +15,7 @@ num_parser.add_argument('number2', type=int, location='args', help='Second numbe
 @api.route('/multiply')
 class Multiply(Resource):
     @api.response(200, 'Success', answer)
-    @api.doc(parser=num_parser)
+    @api.expect(num_parser)
     def get(self):
         '''
         Multiply 2 numbers
